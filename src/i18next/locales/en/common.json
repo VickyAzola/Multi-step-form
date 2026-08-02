@@ -1,0 +1,85 @@
+{
+  "app": {
+    "title": "Multi-step form",
+    "languageLabel": "Language",
+    "languageEnglish": "English",
+    "languageSpanish": "Spanish"
+  },
+  "steps": {
+    "step1": {
+      "badge": "Step 1",
+      "title": "Your info",
+      "description": "Please provide your name, email address, and phone number."
+    },
+    "step2": {
+      "badge": "Step 2",
+      "title": "Select your plan",
+      "description": "You have the option of monthly or yearly billing."
+    },
+    "step3": {
+      "badge": "Step 3",
+      "title": "Pick add-ons",
+      "description": "Add-ons help enhance your gaming experience."
+    },
+    "step4": {
+      "badge": "Step 4",
+      "title": "Finishing up",
+      "description": "Double-check everything looks OK before confirming."
+    },
+    "thankYou": {
+      "title": "Thank you!",
+      "description": "Thanks for confirming your subscription! We hope you have fun using our platform."
+    }
+  },
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "e.g. Stephen King"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "e.g. stephenking@lorem.com"
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "e.g. +1 234 567 890"
+    },
+    "buttons": {
+      "next": "Next Step",
+      "back": "Go Back",
+      "confirm": "Confirm"
+    }
+  },
+  "plans": {
+    "arcade": "Arcade",
+    "advanced": "Advanced",
+    "pro": "Pro",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "freeMonths": "2 months free"
+  },
+  "addons": {
+    "onlineService": {
+      "title": "Online service",
+      "description": "Access to multiplayer games"
+    },
+    "largerStorage": {
+      "title": "Larger storage",
+      "description": "Extra 1TB of cloud save"
+    },
+    "customProfile": {
+      "title": "Customizable profile",
+      "description": "Custom theme on your profile"
+    }
+  },
+  "summary": {
+    "title": "Finishing up",
+    "billing": "per {period}",
+    "total": "Total"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "selection": "Please make a selection before continuing"
+  }
+}

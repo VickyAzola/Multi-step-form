@@ -1,0 +1,85 @@
+{
+  "app": {
+    "title": "Formulario de varios pasos",
+    "languageLabel": "Idioma",
+    "languageEnglish": "Inglés",
+    "languageSpanish": "Español"
+  },
+  "steps": {
+    "step1": {
+      "badge": "Paso 1",
+      "title": "Tus datos",
+      "description": "Ingresa tu nombre, correo electrónico y número de teléfono."
+    },
+    "step2": {
+      "badge": "Paso 2",
+      "title": "Elige tu plan",
+      "description": "Puedes elegir facturación mensual o anual."
+    },
+    "step3": {
+      "badge": "Paso 3",
+      "title": "Selecciona extras",
+      "description": "Los extras ayudan a mejorar tu experiencia."
+    },
+    "step4": {
+      "badge": "Paso 4",
+      "title": "Resumen",
+      "description": "Revisa todo antes de confirmar."
+    },
+    "thankYou": {
+      "title": "¡Gracias!",
+      "description": "Gracias por confirmar tu suscripción. Esperamos que disfrutes la plataforma."
+    }
+  },
+  "form": {
+    "name": {
+      "label": "Nombre",
+      "placeholder": "ej. Stephen King"
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "ej. stephenking@lorem.com"
+    },
+    "phone": {
+      "label": "Número de teléfono",
+      "placeholder": "ej. +56 9 1234 5678"
+    },
+    "buttons": {
+      "next": "Siguiente",
+      "back": "Volver",
+      "confirm": "Confirmar"
+    }
+  },
+  "plans": {
+    "arcade": "Arcade",
+    "advanced": "Avanzado",
+    "pro": "Pro",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "freeMonths": "2 meses gratis"
+  },
+  "addons": {
+    "onlineService": {
+      "title": "Servicio en línea",
+      "description": "Acceso a juegos multijugador"
+    },
+    "largerStorage": {
+      "title": "Más almacenamiento",
+      "description": "1 TB adicional para guardar en la nube"
+    },
+    "customProfile": {
+      "title": "Perfil personalizable",
+      "description": "Tema personalizado en tu perfil"
+    }
+  },
+  "summary": {
+    "title": "Resumen final",
+    "billing": "por {period}",
+    "total": "Total"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Ingresa un correo electrónico válido",
+    "selection": "Elige una opción antes de continuar"
+  }
+}
