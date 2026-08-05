@@ -55,7 +55,9 @@
     "advanced": "Avanzado",
     "pro": "Pro",
     "monthly": "Mensual",
+    "month": "mes",
     "yearly": "Anual",
+    "year": "año",
     "freeMonths": "2 meses gratis"
   },
   "addons": {

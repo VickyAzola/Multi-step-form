@@ -8,7 +8,7 @@
   "steps": {
     "step1": {
       "badge": "Step 1",
-      "title": "Your info",
+      "title": "Personal info",
       "description": "Please provide your name, email address, and phone number."
     },
     "step2": {
@@ -55,7 +55,9 @@
     "advanced": "Advanced",
     "pro": "Pro",
     "monthly": "Monthly",
+    "month": "mo",
     "yearly": "Yearly",
+    "year": "yr",
     "freeMonths": "2 months free"
   },
   "addons": {

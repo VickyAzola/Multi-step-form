@@ -2,14 +2,14 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import enCommon from './locales/en/common.json';
-import esClCommon from './locales/es/common.json';
+import esCommon from './locales/es/common.json';
 
 const resources = {
   en: {
     common: enCommon,
   },
   'es-CL': {
-    common: esClCommon,
+    common: esCommon,
   },
 } as const;
 
