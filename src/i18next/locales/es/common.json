@@ -28,7 +28,7 @@
     },
     "thankYou": {
       "title": "¡Gracias!",
-      "description": "Gracias por confirmar tu suscripción. Esperamos que disfrutes la plataforma."
+      "description": "¡Gracias por confirmar tu suscripción! Esperamos que disfrutes usando nuestra plataforma. Si alguna vez necesitas ayuda, no dudes en enviarnos un correo electrónico a support@loremgaming.com."
     }
   },
   "form": {
@@ -56,8 +56,10 @@
     "pro": "Pro",
     "monthly": "Mensual",
     "month": "mes",
+    "mo": "mes",
     "yearly": "Anual",
     "year": "año",
+    "yr": "año",
     "freeMonths": "2 meses gratis"
   },
   "addons": {
@@ -75,13 +77,14 @@
     }
   },
   "summary": {
-    "title": "Resumen final",
-    "billing": "por {period}",
-    "total": "Total"
+    "billing": "por {{period}}",
+    "total": "Total",
+    "change": "Cambiar"
   },
   "validation": {
     "required": "Este campo es obligatorio",
     "email": "Ingresa un correo electrónico válido",
+    "phone": "Ingresa un teléfono válido",
     "selection": "Elige una opción antes de continuar"
   }
 }

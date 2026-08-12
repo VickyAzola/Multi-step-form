@@ -1,15 +1,22 @@
 import CardForm from "../CardForm";
 import SelectCard from "../ui/SelectCard";
+import Button from "../ui/Button";
 import iconArcade from "../../assets/images/icon-arcade.svg";
 import iconAdvaced from "../../assets/images/icon-advanced.svg";
 import iconPro from "../../assets/images/icon-pro.svg";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Periods, Plans } from "../../types/global";
+import { Periods, Plans, type Step2Data } from "../../types/form";
 
-function Step2() {
+interface Step2Types {
+  handlePrevStep: () => void;
+  onSubmitStep: (data: Step2Data) => void;
+}
+
+function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
   const { t } = useTranslation();
-  const [period, setPeriod] = useState(Periods.MONTHLY);
+
+  const [selectedPeriod, setSelectedPeriod] = useState(Periods.MONTHLY);
   const [plan, setPlan] = useState(Plans.ARCADE);
 
   const plans = [
@@ -17,33 +24,45 @@ function Step2() {
       id: Plans.ARCADE,
       icon: iconArcade,
       label: "plans.arcade",
-      amount: period === Periods.MONTHLY ? "9" : "90",
-      period: period === Periods.MONTHLY ? "plans.month" : "plans.year",
+      amount: selectedPeriod === Periods.MONTHLY ? "9" : "90",
     },
     {
       id: Plans.ADVANCED,
       icon: iconAdvaced,
       label: "plans.advanced",
-      amount: period === Periods.MONTHLY ? "12" : "120",
-      period: period === Periods.MONTHLY ? "plans.month" : "plans.year",
+      amount: selectedPeriod === Periods.MONTHLY ? "12" : "120",
     },
     {
       id: Plans.PRO,
       icon: iconPro,
       label: "plans.pro",
-      amount: period === Periods.MONTHLY ? "15" : "150",
-      period: period === Periods.MONTHLY ? "plans.month" : "plans.year",
+      amount: selectedPeriod === Periods.MONTHLY ? "15" : "150",
     },
   ];
 
-  const handleSelectPlan = (plan: Plans) => {
-    setPlan(plan);
+  const handleSelectPlan = (selectedPlan: Plans) => {
+    setPlan(selectedPlan);
   };
 
   const handleTogglePeriod = () => {
-    setPeriod((currentPeriod) =>
-      currentPeriod === Periods.MONTHLY ? Periods.YEARLY : Periods.MONTHLY
+    setSelectedPeriod((currentPeriod) =>
+      currentPeriod === Periods.MONTHLY ? Periods.YEARLY : Periods.MONTHLY,
     );
+  };
+
+  const handleSubmit = () => {
+    const selectedPlan = plans.find((item) => item.id === plan);
+    if (!selectedPlan) return;
+
+    const stepData: Step2Data = {
+      plan: {
+        name: selectedPlan.id,
+        amount: selectedPlan.amount,
+      },
+      period: selectedPeriod,
+    };
+
+    onSubmitStep(stepData);
   };
 
   return (
@@ -57,9 +76,9 @@ function Step2() {
                 icon={item.icon}
                 label={item.label}
                 amount={item.amount}
-                period={item.period}
+                period={selectedPeriod === Periods.MONTHLY ? "plans.mo" : "plans.yr"}
                 isSelected={plan === item.id}
-                showBonus={period === Periods.YEARLY}
+                showBonus={selectedPeriod === Periods.YEARLY}
                 onClick={() => handleSelectPlan(item.id)}
               />
             ))}
@@ -68,7 +87,7 @@ function Step2() {
           <div className="bg-NeutralBlue50 flex items-center justify-center gap-4 rounded-lg bg-PrimaryBlue50 px-4 py-3">
             <span
               className={`text-sm font-semibold ${
-                period === Periods.MONTHLY
+                selectedPeriod === Periods.MONTHLY
                   ? "text-PrimaryBlue950"
                   : "text-NeutralGrey500"
               }`}
@@ -82,13 +101,13 @@ function Step2() {
             >
               <span
                 className={`absolute top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-NeutralWhite transition ${
-                  period === Periods.MONTHLY ? "left-1" : "left-6"
+                  selectedPeriod === Periods.MONTHLY ? "left-1" : "left-6"
                 }`}
               />
             </button>
             <span
               className={`text-sm font-semibold ${
-                period === Periods.YEARLY
+                selectedPeriod === Periods.YEARLY
                   ? "text-PrimaryBlue950"
                   : "text-NeutralGrey500"
               }`}
@@ -98,6 +117,22 @@ function Step2() {
           </div>
         </form>
       </CardForm>
+
+      <footer className="fixed flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
+        <Button
+          variant="text"
+          type="button"
+          text="form.buttons.back"
+          onClick={handlePrevStep}
+        />
+
+        <Button
+          variant="square"
+          type="button"
+          text="form.buttons.next"
+          onClick={handleSubmit}
+        />
+      </footer>
     </>
   );
 }

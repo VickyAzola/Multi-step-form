@@ -28,7 +28,7 @@
     },
     "thankYou": {
       "title": "Thank you!",
-      "description": "Thanks for confirming your subscription! We hope you have fun using our platform."
+      "description": "Thanks for confirming your subscription! We hope you have fun using our platform. If you ever nedd support, please feel free to email us at support@loremgaming.com"
     }
   },
   "form": {
@@ -55,9 +55,11 @@
     "advanced": "Advanced",
     "pro": "Pro",
     "monthly": "Monthly",
-    "month": "mo",
+    "month": "month",
+    "mo": "mo",
     "yearly": "Yearly",
-    "year": "yr",
+    "year": "year",
+    "yr": "yr",
     "freeMonths": "2 months free"
   },
   "addons": {
@@ -75,13 +77,14 @@
     }
   },
   "summary": {
-    "title": "Finishing up",
-    "billing": "per {period}",
-    "total": "Total"
+    "billing": "per {{period}}",
+    "total": "Total",
+    "change": "Change"
   },
   "validation": {
     "required": "This field is required",
     "email": "Please enter a valid email address",
+    "phone": "Please enter a valid phone number",
     "selection": "Please make a selection before continuing"
   }
 }
