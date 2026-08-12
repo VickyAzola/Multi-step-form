@@ -6,6 +6,7 @@ interface InputLabelTypes {
   label: string;
   placeholder: string;
   errorMessage?: string;
+  defaultValue?: string;
 }
 
 function InputLabel({
@@ -14,6 +15,7 @@ function InputLabel({
   label,
   placeholder,
   errorMessage,
+  defaultValue,
 }: InputLabelTypes) {
   const { t } = useTranslation();
 
@@ -35,6 +37,7 @@ function InputLabel({
           id={name}
           type={type}
           name={name}
+          defaultValue={defaultValue}
           className={`${errorMessage ? "border-PrimaryRed500" : "border-NeutralGrey500/80"} border mt-1 rounded-lg px-3 py-2`}
           placeholder={t(placeholder)}
         />

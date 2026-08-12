@@ -15,7 +15,8 @@ interface Plan {
 }
 
 interface AddOns {
-  name: string;
+  id: string;
+  label: string;
   amount: string;
 }
 

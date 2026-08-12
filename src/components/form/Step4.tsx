@@ -44,10 +44,10 @@ function Step4({ formData, handlePrevStep, onConfirm }: Step4Types) {
 
           {formData.addOns.map((item) => (
             <div
-              key={item.name}
+              key={item.label}
               className="flex justify-between items-center py-2"
             >
-              <p className="text-NeutralGrey500">{t(item.name)}</p>
+              <p className="text-NeutralGrey500">{t(item.label)}</p>
               <p className="text-PrimaryBlue950">
                 +${item.amount}/{periodAcronym}
               </p>

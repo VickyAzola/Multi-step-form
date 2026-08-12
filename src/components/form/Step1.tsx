@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import { type SubmitEvent, useState } from "react";
 import { isValidEmail, isValidPhone } from "../../helpers/validations";
 import type { Step1Data } from "../../types/form";
+import { useCustomerPlan } from "../../stores/customerPlan";
 
 
 interface Step1Props {
@@ -18,6 +19,7 @@ interface FormErrors {
 
 function Step1({ onSubmitStep }: Step1Props) {
   const [errors, setErrors] = useState<FormErrors>({});
+  const customerData = useCustomerPlan((state) => state.customerData);
 
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -69,6 +71,7 @@ function Step1({ onSubmitStep }: Step1Props) {
             label="form.name.label"
             placeholder="form.name.placeholder"
             errorMessage={errors.name}
+            defaultValue={customerData.name}
           />
           <InputLabel
             type="email"
@@ -76,6 +79,7 @@ function Step1({ onSubmitStep }: Step1Props) {
             label="form.email.label"
             placeholder="form.email.placeholder"
             errorMessage={errors.email}
+            defaultValue={customerData.email}
           />
           <InputLabel
             type="phone"
@@ -83,6 +87,7 @@ function Step1({ onSubmitStep }: Step1Props) {
             label="form.phone.label"
             placeholder="form.phone.placeholder"
             errorMessage={errors.phone}
+            defaultValue={customerData.phone}
           />
         </CardForm>
 

@@ -7,6 +7,7 @@ import iconPro from "../../assets/images/icon-pro.svg";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Periods, Plans, type Step2Data } from "../../types/form";
+import { useCustomerPlan } from "../../stores/customerPlan";
 
 interface Step2Types {
   handlePrevStep: () => void;
@@ -15,9 +16,14 @@ interface Step2Types {
 
 function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
   const { t } = useTranslation();
+  const customerData = useCustomerPlan((state) => state.customerData);
 
-  const [selectedPeriod, setSelectedPeriod] = useState(Periods.MONTHLY);
-  const [plan, setPlan] = useState(Plans.ARCADE);
+  const [selectedPeriod, setSelectedPeriod] = useState<Periods>(
+    customerData.period === Periods.YEARLY ? Periods.YEARLY : Periods.MONTHLY,
+  );
+  const [plan, setPlan] = useState<Plans>(
+    (customerData.plan.name as Plans) || Plans.ARCADE,
+  );
 
   const plans = [
     {
