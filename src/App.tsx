@@ -53,15 +53,15 @@ function App() {
   };
 
   return (
-    <>
-      <header className="relative">
+    <div className="min-h-screen relative flex flex-col">
+      <header className="absolute top-0 w-full">
         <div className="absolute right-2 top-2 z-30 md:right-8 md:top-8">
           <LanguageSwitch />
         </div>
         <NavMobile currentStep={currentStep} />
       </header>
-      <main>
-        <section className="absolute z-20 top-28 inset-x-0 mx-4">
+      <main className="absolute z-10 top-28 w-full overflow-y-auto px-4 pb-28">
+        <section className="mx-auto w-full max-w-2xl">
           {currentStep == 1 && <Step1 onSubmitStep={handleSubmitStep1} />}
 
           {currentStep == 2 && (
@@ -99,7 +99,7 @@ function App() {
           )}
         </section>
       </main>
-    </>
+    </div>
   );
 }
 
