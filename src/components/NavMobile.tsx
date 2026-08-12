@@ -7,7 +7,7 @@ function NavMobile({ currentStep }: NavMobileType) {
 
   return (
     <>
-      <nav className="w-full h-42 bg-[url('./assets/images\bg-sidebar-mobile.svg')] bg-cover bg-no-repeat flex items-start justify-center gap-4 pt-7">
+      <nav className="w-full h-42 bg-[url('./assets/images\bg-sidebar-mobile.svg')] bg-cover bg-no-repeat flex items-start justify-center gap-4 pt-14">
         {steps.map((item) => (
           <div
             key={item}

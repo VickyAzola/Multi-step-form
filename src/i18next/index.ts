@@ -8,7 +8,7 @@ const resources = {
   en: {
     common: enCommon,
   },
-  'es-CL': {
+  es: {
     common: esCommon,
   },
 } as const;
@@ -17,7 +17,7 @@ i18n.use(initReactI18next).init({
   resources,
   lng: 'en',
   fallbackLng: 'en',
-  supportedLngs: ['en', 'es-CL'],
+  supportedLngs: ['en', 'es'],
   defaultNS: 'common',
   ns: ['common'],
   interpolation: {

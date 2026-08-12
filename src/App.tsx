@@ -3,11 +3,12 @@ import Step1 from "./components/form/Step1";
 import Step2 from "./components/form/Step2";
 import Step3 from "./components/form/Step3";
 import Step4 from "./components/form/Step4";
-import iconThankYou from "./assets/images/icon-thank-you.svg";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import iconThankYou from "./assets/images/icon-thank-you.svg"; 
+import { useState } from "react"; 
+import { useTranslation } from "react-i18next"; 
 import type { Step1Data, Step2Data, Step3Data } from "./types/form";
 import { useCustomerPlan } from "./stores/customerPlan";
+import LanguageSwitch from "./components/ui/LanguageSwitch";
 
 function App() {
   const { t } = useTranslation();
@@ -53,11 +54,14 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="relative">
+        <div className="absolute right-2 top-2 z-30 md:right-8 md:top-8">
+          <LanguageSwitch />
+        </div>
         <NavMobile currentStep={currentStep} />
       </header>
       <main>
-        <section className="absolute z-20 top-24 inset-x-0 mx-4">
+        <section className="absolute z-20 top-28 inset-x-0 mx-4">
           {currentStep == 1 && <Step1 onSubmitStep={handleSubmitStep1} />}
 
           {currentStep == 2 && (
