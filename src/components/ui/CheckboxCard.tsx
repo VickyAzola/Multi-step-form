@@ -28,7 +28,7 @@ function CheckboxCard({
             : "border-NeutralGrey500/35 bg-NeutralWhite"
         }`}
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 md:gap-6">
           <div className="relative flex items-center">
             <input
               type="checkbox"

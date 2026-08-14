@@ -1,11 +1,11 @@
-import NavMobile from "./components/NavMobile";
+import StepsNavigation from "./components/StepsNavigation";
 import Step1 from "./components/form/Step1";
 import Step2 from "./components/form/Step2";
 import Step3 from "./components/form/Step3";
 import Step4 from "./components/form/Step4";
-import iconThankYou from "./assets/images/icon-thank-you.svg"; 
-import { useState } from "react"; 
-import { useTranslation } from "react-i18next"; 
+import iconThankYou from "./assets/images/icon-thank-you.svg";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import type { Step1Data, Step2Data, Step3Data } from "./types/form";
 import { useCustomerPlan } from "./stores/customerPlan";
 import LanguageSwitch from "./components/ui/LanguageSwitch";
@@ -27,22 +27,16 @@ function App() {
 
   const handleSubmitStep1 = (step1Data: Step1Data) => {
     updateStep1(step1Data);
-    console.log("step1", customerData);
-
     setCurrentStep(2);
   };
 
   const handleSubmitStep2 = (step2Data: Step2Data) => {
     updateStep2(step2Data);
-    console.log("step2", customerData);
-
     setCurrentStep(3);
   };
 
   const handleSubmitStep3 = (step3Data: Step3Data) => {
     updateStep3(step3Data);
-    console.log("step3", customerData);
-
     setCurrentStep(4);
   };
 
@@ -58,46 +52,52 @@ function App() {
         <div className="absolute right-2 top-2 z-30 md:right-8 md:top-8">
           <LanguageSwitch />
         </div>
-        <NavMobile currentStep={currentStep} />
+          <StepsNavigation isMobile={true} currentStep={currentStep} /> 
       </header>
-      <main className="absolute z-10 top-28 w-full overflow-y-auto px-4 pb-28">
-        <section className="mx-auto w-full max-w-2xl">
-          {currentStep == 1 && <Step1 onSubmitStep={handleSubmitStep1} />}
 
-          {currentStep == 2 && (
-            <Step2
-              handlePrevStep={handlePrevStep}
-              onSubmitStep={handleSubmitStep2}
-            />
-          )}
-          {currentStep == 3 && (
-            <Step3
-              period={customerData.period}
-              handlePrevStep={handlePrevStep}
-              onSubmitStep={handleSubmitStep3}
-            />
-          )}
+      <main className="absolute z-10 top-28 md:top-20 w-full overflow-y-auto px-4 pb-28 md:pb-10">
+        <div className="md:bg-NeutralWhite md:shadow-lg md:rounded-lg md:grid md:grid-cols-3 md:p-4 md:max-w-4xl md:mx-auto">
+          <div className="md:col-span-1">
+            <StepsNavigation  isMobile={false}  currentStep={currentStep} />
+          </div>
+          <section className="mx-auto w-full max-w-xl md:col-span-2 md:max-w-lg md:mt-8 md:relative">
+            {currentStep == 1 && <Step1 onSubmitStep={handleSubmitStep1} />}
 
-          {currentStep == 4 && !isFormSended && (
-            <Step4
-              formData={customerData}
-              handlePrevStep={handlePrevStep}
-              onConfirm={handleConfirm}
-            />
-          )}
+            {currentStep == 2 && (
+              <Step2
+                handlePrevStep={handlePrevStep}
+                onSubmitStep={handleSubmitStep2}
+              />
+            )}
+            {currentStep == 3 && (
+              <Step3
+                period={customerData.period}
+                handlePrevStep={handlePrevStep}
+                onSubmitStep={handleSubmitStep3}
+              />
+            )}
 
-          {isFormSended && (
-            <div className="px-6 py-12 rounded-lg bg-NeutralWhite shadow-lg">
-              <img src={iconThankYou} className="mx-auto mb-8" />
-              <h1 className="text-center text-2xl mb-3 font-semibold text-PrimaryBlue950">
-                {t("steps.thankYou.title")}
-              </h1>
-              <p className="text-center text-NeutralGrey500">
-                {t("steps.thankYou.description")}
-              </p>
-            </div>
-          )}
-        </section>
+            {currentStep == 4 && !isFormSended && (
+              <Step4
+                formData={customerData}
+                handlePrevStep={handlePrevStep}
+                onConfirm={handleConfirm}
+              />
+            )}
+
+            {isFormSended && (
+              <div className="px-6 py-12 md:py-0 md:px-8 rounded-lg bg-NeutralWhite shadow-lg md:shadow-NeutralWhite flex flex-col items-center justify-center h-full">
+                <img src={iconThankYou} className="mx-auto mb-8" />
+                <h1 className="text-center text-2xl md:text-3xl mb-3 font-semibold md:font-bold text-PrimaryBlue950">
+                  {t("steps.thankYou.title")}
+                </h1>
+                <p className="text-center text-NeutralGrey500">
+                  {t("steps.thankYou.description")}
+                </p>
+              </div>
+            )}
+          </section>
+        </div>
       </main>
     </div>
   );

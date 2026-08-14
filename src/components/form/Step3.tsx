@@ -75,7 +75,7 @@ function Step3({ period, handlePrevStep, onSubmitStep }: Step3Types) {
     <>
       <CardForm title="steps.step3.title" subTitle="steps.step3.description">
         <form className="space-y-6">
-          <div className="grid gap-3 md:grid-cols-3 md:gap-4">
+          <div className="grid gap-3">
             {addOns.map((item) => (
               <CheckboxCard
                 key={item.id}
@@ -95,7 +95,7 @@ function Step3({ period, handlePrevStep, onSubmitStep }: Step3Types) {
         </form>
       </CardForm>
 
-      <footer className="fixed flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
+      <footer className="fixed md:absolute flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
         <Button
           variant="text"
           type="button"

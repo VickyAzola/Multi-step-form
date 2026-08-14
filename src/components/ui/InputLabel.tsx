@@ -21,16 +21,16 @@ function InputLabel({
 
   return (
     <>
-      <div className="flex flex-col mt-1 mb-3">
+      <div className="flex flex-col mt-1 md:mt-2 mb-3 md:mb-6">
         <div className="flex justify-between">
           <label
             htmlFor={name}
-            className="text-PrimaryBlue950 text-sm font-semibold"
+            className="text-PrimaryBlue950 text-sm md:text-base font-semibold"
           >
             {t(label)}
           </label>
           {errorMessage && (
-            <p className="text-sm text-PrimaryRed500">{t(errorMessage)}</p>
+            <p className="text-sm md:text-base text-PrimaryRed500">{t(errorMessage)}</p>
           )}
         </div>
         <input

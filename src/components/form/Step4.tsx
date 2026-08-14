@@ -60,13 +60,13 @@ function Step4({ formData, handlePrevStep, onConfirm }: Step4Types) {
             {t("summary.total")} ({t("summary.billing", { period: periodFull })}
             )
           </p>
-          <p className="text-PrimaryPurple600 font-semibold">
+          <p className="text-PrimaryPurple600 font-semibold md:text-lg">
             +${total}/{periodAcronym}
           </p>
         </div>
       </CardForm>
 
-      <footer className="fixed flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
+      <footer className="fixed  md:absolute flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
         <Button
           variant="text"
           type="button"

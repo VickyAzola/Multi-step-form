@@ -9,21 +9,25 @@
     "step1": {
       "badge": "Step 1",
       "title": "Personal info",
+      "shortTitle": "Your info",
       "description": "Please provide your name, email address, and phone number."
     },
     "step2": {
       "badge": "Step 2",
       "title": "Select your plan",
+      "shortTitle": "Select plan",
       "description": "You have the option of monthly or yearly billing."
     },
     "step3": {
       "badge": "Step 3",
       "title": "Pick add-ons",
+      "shortTitle": "add-ons",
       "description": "Add-ons help enhance your gaming experience."
     },
     "step4": {
       "badge": "Step 4",
       "title": "Finishing up",
+      "shortTitle": "Summary",
       "description": "Double-check everything looks OK before confirming."
     },
     "thankYou": {

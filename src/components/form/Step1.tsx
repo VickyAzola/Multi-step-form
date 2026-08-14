@@ -91,7 +91,7 @@ function Step1({ onSubmitStep }: Step1Props) {
           />
         </CardForm>
 
-        <footer className="fixed flex left-0  bottom-0 w-full bg-NeutralWhite p-4 justify-end">
+        <footer className="fixed md:absolute flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-end">
           <Button variant="square" type="submit" text="form.buttons.next" />
         </footer>
       </form>

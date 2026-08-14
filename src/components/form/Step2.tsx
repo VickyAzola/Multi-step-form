@@ -124,7 +124,7 @@ function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
         </form>
       </CardForm>
 
-      <footer className="fixed flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
+      <footer className="fixed md:absolute flex left-0 bottom-0 w-full bg-NeutralWhite p-4 justify-between">
         <Button
           variant="text"
           type="button"

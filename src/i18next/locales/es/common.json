@@ -9,21 +9,25 @@
     "step1": {
       "badge": "Paso 1",
       "title": "Tus datos",
+      "shortTitle": "Tus datos",
       "description": "Ingresa tu nombre, correo electrónico y número de teléfono."
     },
     "step2": {
       "badge": "Paso 2",
       "title": "Elige tu plan",
+      "shortTitle": "Plan",
       "description": "Puedes elegir facturación mensual o anual."
     },
     "step3": {
       "badge": "Paso 3",
       "title": "Selecciona extras",
+      "shortTitle": "Extras",
       "description": "Los extras ayudan a mejorar tu experiencia."
     },
     "step4": {
       "badge": "Paso 4",
       "title": "Resumen",
+      "shortTitle": "Resumen",
       "description": "Revisa todo antes de confirmar."
     },
     "thankYou": {
