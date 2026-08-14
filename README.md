@@ -2,8 +2,6 @@
 
 ## Tabla de Contenidos
 
-- [Multi Step Form](#multi-step-form)
-  - [Tabla de Contenidos](#tabla-de-contenidos)
   - [Descripción](#descripción)
   - [Tecnologías Utilizadas](#tecnologías-utilizadas)
   - [Funcionalidades](#funcionalidades)
@@ -15,6 +13,10 @@
 Multi Step Form es una aplicación web interactiva que guía al usuario a través de un formulario dividido en varios pasos para recopilar su información personal, elegir un plan, agregar complementos y revisar el resumen final antes de confirmar.
 
 La interfaz está diseñada para ofrecer una experiencia clara y ordenada, con navegación por pasos, selección de planes con facturación mensual o anual, extras opcionales y una pantalla final de confirmación.
+
+[Revisa la página aquí]()
+
+<img width="1440" height="1056" alt="preview" src="https://github.com/user-attachments/assets/ca3bde1b-e284-4f5c-a357-899a80f3000f" />
 
 ## Tecnologías Utilizadas
 
@@ -46,12 +48,12 @@ La interfaz está diseñada para ofrecer una experiencia clara y ordenada, con n
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone <URL-del-repositorio>
+   git clone git@github.com:VickyAzola/Multi-step-form.git
    ```
 
 2. **Navegar al directorio del proyecto**:
    ```bash
-   cd multi-step-form-yo/vite-project
+   cd Multi-step-form
    ```
 
 3. **Instalar las dependencias**:
@@ -68,5 +70,5 @@ La interfaz está diseñada para ofrecer una experiencia clara y ordenada, con n
 
 ## Autores
 
-- **Desarrollador**: Victoria Azola Silva
-- **Diseño base**: Inspirado en un challenge de de Frontend Mentor
+- **Desarrolladora**: [Victoria Azola Silva](https://github.com/VickyAzola) - Responsable del desarrollo del código.
+- **Diseño Base**: [Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ) - Inspiración visual y estructura general del desafío.
