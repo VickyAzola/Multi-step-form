@@ -14,7 +14,8 @@ const createInitialCustomerData = (): FormRequest => ({
   email: "",
   phone: "",
   plan: {
-    name: "",
+    id: "",
+    label: "",
     amount: "",
   },
   period: "",

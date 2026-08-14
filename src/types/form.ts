@@ -10,7 +10,8 @@ enum Plans {
 }
 
 interface Plan {
-  name: string;
+  id: string;
+  label: string;
   amount: string;
 }
 

@@ -22,7 +22,7 @@ function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
     customerData.period === Periods.YEARLY ? Periods.YEARLY : Periods.MONTHLY,
   );
   const [plan, setPlan] = useState<Plans>(
-    (customerData.plan.name as Plans) || Plans.ARCADE,
+    (customerData.plan.id as Plans) || Plans.ARCADE,
   );
 
   const plans = [
@@ -62,7 +62,8 @@ function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
 
     const stepData: Step2Data = {
       plan: {
-        name: selectedPlan.id,
+        id: selectedPlan.id,
+        label: selectedPlan.label,
         amount: selectedPlan.amount,
       },
       period: selectedPeriod,

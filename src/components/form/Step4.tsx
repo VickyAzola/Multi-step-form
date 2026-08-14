@@ -32,7 +32,7 @@ function Step4({ formData, handlePrevStep, onChangePlan, onConfirm }: Step4Types
           <div className="flex justify-between items-center border-b border-NeutralGrey500 pb-3">
             <div>
               <p className="text-PrimaryBlue950 font-semibold">
-                {capitalize(formData.plan.name)} ({capitalize(formData.period)})
+                {t(formData.plan.label)} ({capitalize(periodFull)})
               </p>
               <button onClick={onChangePlan} className="text-NeutralGrey500 underline text-sm hover:text-PrimaryPurple600 cursor-pointer">
                 {t("summary.change")}
