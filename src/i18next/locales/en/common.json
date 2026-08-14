@@ -1,10 +1,4 @@
 {
-  "app": {
-    "title": "Multi-step form",
-    "languageLabel": "Language",
-    "languageEnglish": "English",
-    "languageSpanish": "Spanish"
-  },
   "steps": {
     "step1": {
       "badge": "Step 1",

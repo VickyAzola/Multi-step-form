@@ -22,7 +22,7 @@ function CheckboxCard({
     <>
       <div
         onClick={onClick}
-        className={`flex cursor-pointer items-center justify-between rounded-xl border-2 p-4 transition-colors ${
+        className={`flex cursor-pointer items-center justify-between rounded-xl border-2 p-4 transition-colors hover:border-PrimaryPurple600 ${
           isSelected
             ? "border-PrimaryPurple600 bg-PrimaryPurple600/5"
             : "border-NeutralGrey500/35 bg-NeutralWhite"

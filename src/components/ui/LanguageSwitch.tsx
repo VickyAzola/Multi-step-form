@@ -10,7 +10,7 @@ function LanguageSwitch() {
   };
 
   const buttonBase =
-    "min-w-10 rounded-full px-2 py-1 text-xs font-semibold tracking-[0.2em] transition";
+    "min-w-10 rounded-full px-2 py-1 text-xs font-semibold tracking-[0.2em] transition-all cursor-pointer";
 
   return (
     <div className="inline-flex items-center rounded-full border border-white/25 bg-PrimaryPurple600 p-1 shadow-lg backdrop-blur-sm ">

@@ -35,7 +35,7 @@ function StepsNavigation({ currentStep, isMobile }: NavMobileType) {
             <div
               key={item.id}
               className={`${currentStep == item.id ? "bg-PrimaryBlue200 border-PrimaryBlue200 text-PrimaryBlue950" : "text-NeutralWhite border-NeutralWhite"} 
-    border rounded-full h-8 w-8  flex justify-center items-center`}
+    border rounded-full h-8 w-8 flex justify-center items-center`}
             >
               {String(item.id)}
             </div>
@@ -48,7 +48,7 @@ function StepsNavigation({ currentStep, isMobile }: NavMobileType) {
               <div
                 key={item.id}
                 className={`${currentStep == item.id ? "bg-PrimaryBlue200 border-PrimaryBlue200 text-PrimaryBlue950" : "text-NeutralWhite border-NeutralWhite"} 
-    border rounded-full h-9 w-9  flex justify-center items-center`}
+    border rounded-full h-9 w-9  flex justify-center items-center font-bold`}
               >
                 {String(item.id)}
               </div>

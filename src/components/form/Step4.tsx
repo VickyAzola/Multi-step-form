@@ -34,7 +34,7 @@ function Step4({ formData, handlePrevStep, onChangePlan, onConfirm }: Step4Types
               <p className="text-PrimaryBlue950 font-semibold">
                 {capitalize(formData.plan.name)} ({capitalize(formData.period)})
               </p>
-              <button onClick={onChangePlan} className="text-NeutralGrey500 underline text-sm">
+              <button onClick={onChangePlan} className="text-NeutralGrey500 underline text-sm hover:text-PrimaryPurple600 cursor-pointer">
                 {t("summary.change")}
               </button>
             </div>
@@ -56,7 +56,7 @@ function Step4({ formData, handlePrevStep, onChangePlan, onConfirm }: Step4Types
           ))}
         </div>
 
-        <div className="px-2 pt-5 pb-1 flex justify-between items-center">
+        <div className="px-2 md:px-4 pt-5 pb-1 flex justify-between items-center">
           <p className="text-NeutralGrey500">
             {t("summary.total")} ({t("summary.billing", { period: periodFull })}
             )

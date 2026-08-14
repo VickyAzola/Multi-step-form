@@ -26,10 +26,10 @@ function SelectCard({
       <button
         type="button"
         onClick={onClick}
-        className={`cursor-pointer flex w-full gap-4 rounded-lg border p-4 text-left transition md:min-h-40 md:flex-col md:justify-between md:gap-10 ${
+        className={`cursor-pointer flex w-full gap-4 rounded-lg border p-4 text-left transition-all md:min-h-40 md:flex-col md:justify-between md:gap-10 hover:border-PrimaryPurple600 ${
           isSelected
             ? "border-PrimaryPurple600 bg-PrimaryPurple600/5"
-            : "border-NeutralGrey500"
+            : "border-NeutralGrey500 "
         }`}
       >
         <img src={icon} alt="" className="h-10 w-10 shrink-0" />

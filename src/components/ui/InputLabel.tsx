@@ -38,7 +38,8 @@ function InputLabel({
           type={type}
           name={name}
           defaultValue={defaultValue}
-          className={`${errorMessage ? "border-PrimaryRed500" : "border-NeutralGrey500/80"} border mt-1 rounded-lg px-3 py-2`}
+          className={`${errorMessage ? "border-PrimaryRed500" : "border-NeutralGrey500/80"} 
+          border mt-1 rounded-lg px-3 py-2 transition-all hover:border-PrimaryPurple600 focus:border-PrimaryPurple600 focus:outline-none cursor-pointer`}
           placeholder={t(placeholder)}
         />
       </div>
