@@ -40,11 +40,18 @@ function SelectCard({
           <p className="text-NeutralGrey500">
             ${amount}/{t(period)}
           </p>
-          {showBonus && (
+
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-out ${
+              showBonus
+                ? "mt-1 max-h-8 opacity-100 translate-y-0"
+                : "mt-0 max-h-0 opacity-0 -translate-y-1"
+            }`}
+          >
             <p className="text-sm text-PrimaryBlue950">
               {t("plans.freeMonths")}
             </p>
-          )}
+          </div>
         </div>
       </button>
     </>

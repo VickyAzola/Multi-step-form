@@ -8,9 +8,10 @@ interface Step4Types {
   formData: FormRequest;
   handlePrevStep: () => void;
   onConfirm: () => void;
+  onChangePlan: () => void;
 }
 
-function Step4({ formData, handlePrevStep, onConfirm }: Step4Types) {
+function Step4({ formData, handlePrevStep, onChangePlan, onConfirm }: Step4Types) {
   const { t } = useTranslation();
 
   const periodFull =
@@ -33,7 +34,7 @@ function Step4({ formData, handlePrevStep, onConfirm }: Step4Types) {
               <p className="text-PrimaryBlue950 font-semibold">
                 {capitalize(formData.plan.name)} ({capitalize(formData.period)})
               </p>
-              <button className="text-NeutralGrey500 underline text-sm">
+              <button onClick={onChangePlan} className="text-NeutralGrey500 underline text-sm">
                 {t("summary.change")}
               </button>
             </div>

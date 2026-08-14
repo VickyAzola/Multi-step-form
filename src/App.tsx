@@ -40,6 +40,10 @@ function App() {
     setCurrentStep(4);
   };
 
+  const handleChangePlan = () => {
+    setCurrentStep(2);
+  }
+
   const handleConfirm = () => {
     setIsFormSended(true);
     console.log("customerData", customerData);
@@ -81,6 +85,7 @@ function App() {
               <Step4
                 formData={customerData}
                 handlePrevStep={handlePrevStep}
+                onChangePlan={handleChangePlan}
                 onConfirm={handleConfirm}
               />
             )}
