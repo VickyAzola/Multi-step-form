@@ -46,7 +46,7 @@ function App() {
 
   const handleConfirm = () => {
     setIsFormSended(true);
-    console.log("customerData", customerData);
+    console.info("customerData", customerData);
     resetCustomerData();
   };
 
@@ -69,14 +69,20 @@ function App() {
 
             {currentStep == 2 && (
               <Step2
-                handlePrevStep={handlePrevStep}
+                handlePrevStep={(data) => {
+                  updateStep2(data);
+                  handlePrevStep();
+                }}
                 onSubmitStep={handleSubmitStep2}
               />
             )}
             {currentStep == 3 && (
               <Step3
                 period={customerData.period}
-                handlePrevStep={handlePrevStep}
+                handlePrevStep={(data) => {
+                  updateStep3(data);
+                  handlePrevStep();
+                }}
                 onSubmitStep={handleSubmitStep3}
               />
             )}

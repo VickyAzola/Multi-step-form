@@ -10,7 +10,7 @@ import { Periods, Plans, type Step2Data } from "../../types/form";
 import { useCustomerPlan } from "../../stores/customerPlan";
 
 interface Step2Types {
-  handlePrevStep: () => void;
+  handlePrevStep: (data: Step2Data) => void;
   onSubmitStep: (data: Step2Data) => void;
 }
 
@@ -56,7 +56,7 @@ function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
     );
   };
 
-  const handleSubmit = () => {
+  const handleNavigate = (onNavigate: (data: Step2Data) => void) => {
     const selectedPlan = plans.find((item) => item.id === plan);
     if (!selectedPlan) return;
 
@@ -69,7 +69,7 @@ function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
       period: selectedPeriod,
     };
 
-    onSubmitStep(stepData);
+    onNavigate(stepData);
   };
 
   return (
@@ -130,14 +130,14 @@ function Step2({ handlePrevStep, onSubmitStep }: Step2Types) {
           variant="text"
           type="button"
           text="form.buttons.back"
-          onClick={handlePrevStep}
+          onClick={() => handleNavigate(handlePrevStep)}
         />
 
         <Button
           variant="square"
           type="button"
           text="form.buttons.next"
-          onClick={handleSubmit}
+          onClick={() => handleNavigate(onSubmitStep)}
         />
       </footer>
     </>

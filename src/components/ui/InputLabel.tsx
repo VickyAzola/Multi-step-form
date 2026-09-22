@@ -5,6 +5,8 @@ interface InputLabelTypes {
   name: string;
   label: string;
   placeholder: string;
+  autoComplete: string;
+  required: boolean;
   errorMessage?: string;
   defaultValue?: string;
 }
@@ -14,6 +16,8 @@ function InputLabel({
   name,
   label,
   placeholder,
+  autoComplete,
+  required,
   errorMessage,
   defaultValue,
 }: InputLabelTypes) {
@@ -30,7 +34,7 @@ function InputLabel({
             {t(label)}
           </label>
           {errorMessage && (
-            <p className="text-sm md:text-base text-PrimaryRed500">{t(errorMessage)}</p>
+            <p id={`${name}-error`} role="alert" className="text-sm md:text-base text-PrimaryRed500">{t(errorMessage)}</p>
           )}
         </div>
         <input
@@ -38,9 +42,13 @@ function InputLabel({
           type={type}
           name={name}
           defaultValue={defaultValue}
-          className={`${errorMessage ? "border-PrimaryRed500" : "border-NeutralGrey500/80"} 
+          autoComplete={autoComplete}
+          aria-invalid={Boolean(errorMessage)}
+          aria-describedby={errorMessage ? `${name}-error` : undefined}
+          className={`${errorMessage ? "border-PrimaryRed500" : "border-NeutralGrey500"} 
           border mt-1 rounded-lg px-3 py-2 transition-all hover:border-PrimaryPurple600 focus:border-PrimaryPurple600 focus:outline-none cursor-pointer`}
           placeholder={t(placeholder)}
+          required={required}
         />
       </div>
     </>

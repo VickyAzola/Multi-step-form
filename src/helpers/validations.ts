@@ -1,9 +1,22 @@
+const isValidName = (name: string) => {
+  return (
+    name.length <= 100 &&
+    /\p{L}/u.test(name) &&
+    !/[^\p{L}\p{M} .'\u2019-]/u.test(name)
+  );
+};
+
 const isValidEmail = (email: string) => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return (
+    email.length <= 254 &&
+    !/[\s<>"\\]/.test(email) &&
+    /^[^@]+@[^@.]+(?:\.[^@.]+)+$/.test(email)
+  );
 };
 
 const isValidPhone = (phone: string) => {
-  return /^[0-9+\s()-]{7,20}$/.test(phone);
+  const digits = phone.replace(/[ ()-]/g, "");
+  return phone.length <= 30 && !/\s/.test(digits) && /^\+?[0-9]{7,15}$/.test(digits);
 };
 
-export { isValidEmail, isValidPhone };
+export { isValidName, isValidEmail, isValidPhone };

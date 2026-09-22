@@ -53,7 +53,7 @@ function StepsNavigation({ currentStep, isMobile }: NavMobileType) {
                 {String(item.id)}
               </div>
               <div className="uppercase">
-                <p className="text-sm font-light text-NeutralBlue100/50">
+                <p className="text-sm font-light text-NeutralBlue100">
                   {t(item.step)}
                 </p>
                 <p className="text-NeutralBlue100 font-bold tracking-widest">

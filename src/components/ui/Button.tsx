@@ -10,7 +10,7 @@ interface ButtonTypes {
 function Button({ variant, type, text, onClick }: ButtonTypes) {
   const { t } = useTranslation();
 
-  const squareStyle = `${text == "form.buttons.confirm" ? " bg-PrimaryPurple600" : " bg-PrimaryBlue950"} text-NeutralWhite py-2 px-4 md:px-6 md:py-2.5 rounded hover:opacity-80`;
+  const squareStyle = `${text == "form.buttons.confirm" ? " bg-PrimaryPurple600 hover:bg-PrimaryPurple600/90" : " bg-PrimaryBlue950 hover:bg-PrimaryBlue950/90"} text-NeutralWhite py-2 px-4 md:px-6 md:py-2.5 rounded`;
   const textStyle = "text-NeutralGrey500 py-2 px-4 hover:text-PrimaryBlue950 hover:font-semibold";
 
   return (

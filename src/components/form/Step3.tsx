@@ -7,7 +7,7 @@ import { useCustomerPlan } from "../../stores/customerPlan";
 
 interface Step3Types {
   period: string;
-  handlePrevStep: () => void;
+  handlePrevStep: (data: Step3Data) => void;
   onSubmitStep: (data: Step3Data) => void;
 }
 
@@ -60,7 +60,7 @@ function Step3({ period, handlePrevStep, onSubmitStep }: Step3Types) {
     });
   };
 
-  const handleSubmit = () => {
+  const handleNavigate = (onNavigate: (data: Step3Data) => void) => {
     const stepData: Step3Data = {
       addOns: selectedAddOns.map((item) => ({
         id: item.id,
@@ -68,7 +68,7 @@ function Step3({ period, handlePrevStep, onSubmitStep }: Step3Types) {
         amount: item.amount,
       })),
     };
-    onSubmitStep(stepData);
+    onNavigate(stepData);
   };
 
   return (
@@ -100,14 +100,14 @@ function Step3({ period, handlePrevStep, onSubmitStep }: Step3Types) {
           variant="text"
           type="button"
           text="form.buttons.back"
-          onClick={handlePrevStep}
+          onClick={() => handleNavigate(handlePrevStep)}
         />
 
         <Button
           variant="square"
           type="button"
           text="form.buttons.next"
-          onClick={handleSubmit}
+          onClick={() => handleNavigate(onSubmitStep)}
         />
       </footer>
     </>

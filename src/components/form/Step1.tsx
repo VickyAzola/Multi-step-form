@@ -2,7 +2,7 @@ import CardForm from "../CardForm";
 import InputLabel from "../ui/InputLabel";
 import Button from "../ui/Button";
 import { type SubmitEvent, useState } from "react";
-import { isValidEmail, isValidPhone } from "../../helpers/validations";
+import { isValidName, isValidEmail, isValidPhone } from "../../helpers/validations";
 import type { Step1Data } from "../../types/form";
 import { useCustomerPlan } from "../../stores/customerPlan";
 
@@ -27,7 +27,7 @@ function Step1({ onSubmitStep }: Step1Props) {
      const data = new FormData(event.currentTarget);
 
     const stepData: Step1Data = {
-      name: String(data.get("name") ?? "").trim(),
+      name: String(data.get("name") ?? "").trim().normalize("NFC"),
       email: String(data.get("email") ?? "").trim(),
       phone: String(data.get("phone") ?? "").trim(),
     };
@@ -36,6 +36,8 @@ function Step1({ onSubmitStep }: Step1Props) {
 
     if (!stepData.name) {
       newErrors.name = "validation.required";
+    } else if (!isValidName(stepData.name)) {
+      newErrors.name = "validation.name";
     }
 
     if (!stepData.email) {
@@ -53,6 +55,10 @@ function Step1({ onSubmitStep }: Step1Props) {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
+      const firstInvalidField = event.currentTarget.elements.namedItem(
+        Object.keys(newErrors)[0],
+      );
+      if (firstInvalidField instanceof HTMLInputElement) firstInvalidField.focus();
       return;
     }
 
@@ -63,13 +69,15 @@ function Step1({ onSubmitStep }: Step1Props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <CardForm title="steps.step1.title" subTitle="steps.step1.description">
           <InputLabel
             type="text"
             name="name"
             label="form.name.label"
             placeholder="form.name.placeholder"
+            autoComplete="name"
+            required={true}
             errorMessage={errors.name}
             defaultValue={customerData.name}
           />
@@ -78,14 +86,18 @@ function Step1({ onSubmitStep }: Step1Props) {
             name="email"
             label="form.email.label"
             placeholder="form.email.placeholder"
+            autoComplete="email"
+            required={true}
             errorMessage={errors.email}
             defaultValue={customerData.email}
           />
           <InputLabel
-            type="phone"
+            type="tel"
             name="phone"
             label="form.phone.label"
             placeholder="form.phone.placeholder"
+            autoComplete="tel"
+            required={true}
             errorMessage={errors.phone}
             defaultValue={customerData.phone}
           />

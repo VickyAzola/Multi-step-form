@@ -81,6 +81,7 @@
   },
   "validation": {
     "required": "This field is required",
+    "name": "Please enter a valid name",
     "email": "Please enter a valid email address",
     "phone": "Please enter a valid phone number",
     "selection": "Please make a selection before continuing"

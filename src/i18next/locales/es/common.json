@@ -81,6 +81,7 @@
   },
   "validation": {
     "required": "Este campo es obligatorio",
+    "name": "Ingresa un nombre válido",
     "email": "Ingresa un correo electrónico válido",
     "phone": "Ingresa un teléfono válido",
     "selection": "Elige una opción antes de continuar"
